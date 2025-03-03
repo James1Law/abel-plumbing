@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     nextBtn.addEventListener('click', nextSlide);
     prevBtn.addEventListener('click', prevSlide);
     
-    // Touch events for swiping
+    // Touch events
     let touchStartX = 0;
     let touchEndX = 0;
     
