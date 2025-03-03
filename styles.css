@@ -12,7 +12,13 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Ensures minimum height is full viewport */
+    background-color: #f5f5f5; /* Light grey background */
     font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
     line-height: 1.6;
     color: var(--text-color);
 }
@@ -97,10 +103,43 @@ section {
 }
 
 .service-card {
+    background: white;
     padding: 2rem;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
     text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin: 1rem 0;
+}
+
+.service-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    text-align: left;
+}
+
+.service-details li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+    color: #666;
+}
+
+.service-details li:before {
+    content: "✓";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
 }
 
 /* Portfolio Grid */
@@ -133,16 +172,38 @@ section {
 /* Reviews */
 .reviews-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    margin-top: 2rem;
+    padding: 2rem;
 }
 
 .review-card {
+    background: white;
     padding: 2rem;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+}
+
+.stars {
+    color: #ffd700;
+    margin-bottom: 1rem;
+}
+
+.review-card p {
+    font-style: italic;
+    color: #666;
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+.review-card h4 {
+    color: #333;
+    margin-top: 1rem;
 }
 
 /* Contact Section */
@@ -153,11 +214,12 @@ section {
 
 /* Footer */
 footer {
-    background-color: var(--secondary-color);
+    background-color: #333; /* Dark background for footer */
     color: white;
+    padding: 1rem;
     text-align: center;
-    padding: 2rem;
-    margin-top: 4rem;
+    width: 100%;
+    margin-top: auto; /* Pushes footer to bottom */
 }
 
 /* Mobile Responsiveness */
@@ -174,6 +236,11 @@ footer {
     .portfolio-grid,
     .reviews-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
     }
 }
 
@@ -324,6 +391,150 @@ footer {
 
 /* Content container modifications */
 .content-container {
-    padding-top: 80px; /* Adjust this value based on your navbar height */
-    min-height: calc(100vh - 80px);
+    flex: 1; /* Makes the container take up remaining space */
+    background-color: #f5f5f5; /* Same as body background */
+    padding-bottom: 2rem; /* Add some padding at the bottom */
+}
+
+/* Desktop view */
+@media (min-width: 769px) {
+    .reviews-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        padding: 2rem;
+    }
+    .carousel-button, .carousel-dots {
+        display: none;
+    }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    .reviews-container {
+        position: relative;
+        padding: 0 1rem;
+        overflow: hidden;
+    }
+
+    .reviews-carousel {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .carousel-inner {
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .review-card {
+        min-width: 100%;
+        padding: 1.5rem;
+        box-sizing: border-box;
+    }
+
+    .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.8);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .carousel-button.prev {
+        left: 10px;
+    }
+
+    .carousel-button.next {
+        right: 10px;
+    }
+
+    .carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 1rem;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ccc;
+        cursor: pointer;
+    }
+
+    .dot.active {
+        background: var(--secondary-color);
+    }
+}
+
+/* Reviews section styles */
+#reviews {
+    position: relative; /* Change from fixed/absolute if it was set */
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 2rem 0;
+}
+
+.reviews-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Desktop view */
+@media (min-width: 769px) {
+    .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+
+    .review-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        margin-bottom: 2rem;
+    }
+
+    /* Hide carousel elements on desktop */
+    .carousel-button, 
+    .carousel-dots {
+        display: none;
+    }
+}
+
+/* Keep your existing mobile carousel styles */
+@media (max-width: 768px) {
+    /* ... existing mobile carousel styles ... */
+}
+
+/* Review card styles */
+.review-card {
+    opacity: 1; /* Ensure cards are visible */
+    visibility: visible; /* Ensure cards are visible */
+}
+
+.stars {
+    color: #ffd700;
+    margin-bottom: 1rem;
+}
+
+.review-card p {
+    color: #666;
+    line-height: 1.6;
+    margin: 1rem 0;
+}
+
+.review-card h4 {
+    color: #333;
+    margin-top: 1rem;
 } 
