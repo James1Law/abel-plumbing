@@ -142,24 +142,33 @@ section {
     left: 0;
 }
 
-/* Portfolio Grid */
+/* Portfolio/Our Work section */
+#portfolio {
+    padding-top: 80px; /* Add space for the fixed header */
+    margin-top: 2rem;
+}
+
+#portfolio h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .portfolio-item {
-    background: #fff;
+    background: white;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
-}
-
-.portfolio-item:hover {
-    transform: translateY(-5px);
 }
 
 .portfolio-item img {
@@ -167,6 +176,17 @@ section {
     height: 300px;
     object-fit: cover;
     display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #portfolio {
+        padding-top: 60px; /* Slightly less padding on mobile */
+    }
+    
+    .portfolio-grid {
+        padding: 1rem;
+    }
 }
 
 /* Reviews */
