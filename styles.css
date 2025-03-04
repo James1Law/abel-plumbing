@@ -442,7 +442,7 @@ footer {
 @media (max-width: 768px) {
     .reviews-container {
         position: relative;
-        padding: 0 1rem;
+        padding: 0 10px; /* Reduce padding on mobile */
         overflow: hidden;
     }
 
@@ -467,21 +467,21 @@ footer {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.9); /* More opaque background on mobile */
         border: none;
         border-radius: 50%;
-        width: 40px;
-        height: 40px;
+        width: 35px; /* Slightly smaller buttons on mobile */
+        height: 35px;
         cursor: pointer;
         z-index: 2;
     }
 
     .carousel-button.prev {
-        left: 10px;
+        left: 5px; /* Keep button visible on mobile */
     }
 
     .carousel-button.next {
-        right: 10px;
+        right: 5px; /* Keep button visible on mobile */
     }
 
     .carousel-dots {
@@ -514,7 +514,7 @@ footer {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 2rem; /* Increased padding to accommodate buttons */
+    padding: 0 2rem;
 }
 
 .reviews-carousel {
@@ -556,7 +556,7 @@ footer {
 
 .carousel-button {
     position: absolute;
-    top: calc(50% - 20px); /* Center vertically accounting for button height */
+    top: calc(50% - 20px);
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.8);
     border: none;
@@ -571,12 +571,36 @@ footer {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.carousel-button.prev {
-    left: -20px; /* Adjust position */
+/* Desktop positioning */
+@media (min-width: 769px) {
+    .carousel-button.prev {
+        left: -20px;
+    }
+
+    .carousel-button.next {
+        right: -20px;
+    }
 }
 
-.carousel-button.next {
-    right: -20px; /* Adjust position */
+/* Mobile positioning */
+@media (max-width: 768px) {
+    .reviews-container {
+        padding: 0 10px; /* Reduce padding on mobile */
+    }
+    
+    .carousel-button.prev {
+        left: 5px; /* Keep button visible on mobile */
+    }
+
+    .carousel-button.next {
+        right: 5px; /* Keep button visible on mobile */
+    }
+
+    .carousel-button {
+        background: rgba(255, 255, 255, 0.9); /* More opaque background on mobile */
+        width: 35px; /* Slightly smaller buttons on mobile */
+        height: 35px;
+    }
 }
 
 .carousel-dots {
