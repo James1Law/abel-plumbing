@@ -742,4 +742,42 @@ footer {
     transform: translateX(-50%);
     color: white;
     font-size: 16px;
+}
+
+.social-icon {
+    color: #1877f2;  /* Facebook blue */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    transition: opacity 0.3s ease;
+}
+
+.social-icon:hover {
+    opacity: 0.8;
+}
+
+.social-icon i {
+    font-size: 1.3rem;
+}
+
+.social-icon span {
+    color: #333;
+}
+
+/* Update mobile menu to include social icon */
+@media (max-width: 768px) {
+    .drawer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .drawer-links .social-icon {
+        padding: 10px;
+        justify-content: flex-start;
+    }
 } 

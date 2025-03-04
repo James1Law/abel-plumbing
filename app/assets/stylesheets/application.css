@@ -1,0 +1,10 @@
+.social-icon {
+  color: #1877f2;  /* Facebook blue color */
+  text-decoration: none;
+  margin: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.social-icon:hover {
+  opacity: 0.8;
+} 
