@@ -54,6 +54,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetId = item.getAttribute('href').substring(1);
             document.getElementById(targetId).classList.add('active');
             closeDrawerMenu();
+            
+            // Add this line to scroll to top when changing pages
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     });
 
