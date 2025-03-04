@@ -427,13 +427,14 @@ footer {
 /* Desktop view */
 @media (min-width: 769px) {
     .reviews-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
+        max-width: 800px; /* Limit width on desktop */
+        margin: 0 auto;
         padding: 2rem;
     }
-    .carousel-button, .carousel-dots {
-        display: none;
+    
+    .review-card {
+        margin: 2rem auto; /* Center cards and add vertical spacing */
+        max-width: 800px;
     }
 }
 
