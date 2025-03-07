@@ -3,6 +3,8 @@
     --secondary-color: #333;
     --background-color: #fff;
     --text-color: #333;
+    --heading-font: 'Montserrat', sans-serif;
+    --body-font: 'Open Sans', sans-serif;  /* Open Sans pairs well with Montserrat */
 }
 
 * {
@@ -16,7 +18,8 @@ body {
     padding: 0;
     min-height: 100vh; /* Ensures minimum height is full viewport */
     background-color: #f5f5f5; /* Light grey background */
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--body-font);
+    font-weight: 400;
     display: flex;
     flex-direction: column;
     line-height: 1.6;
@@ -246,7 +249,7 @@ section {
 /* Contact Section */
 .contact-info {
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 /* Footer */
@@ -293,7 +296,7 @@ footer {
     background-repeat: no-repeat;
     height: 250px;
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     background-color: #f5f5f5;
 }
 
@@ -316,6 +319,7 @@ footer {
 
 .about-content {
     padding: 1rem;
+    margin-top: 0;
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
@@ -327,13 +331,13 @@ footer {
 }
 
 .about-content p {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     line-height: 1.6;
     color: #666;
 }
 
 .quick-contact {
-    margin-top: 2rem;
+    margin-top: 1rem;
     padding: 1.5rem;
     background-color: #f8f8f8;
     border-radius: 8px;
@@ -789,8 +793,8 @@ footer {
 }
 
 /* Update all headings to use Montserrat */
-h1, h2, h3, h4 {
-    font-family: 'Montserrat', sans-serif;
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
     font-weight: 600;
 }
 
@@ -817,24 +821,25 @@ h4 {
 
 /* Update specific components that might need font adjustments */
 .service-card h3 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--heading-font);
     font-weight: 600;
     margin-bottom: 1rem;
 }
 
 .review-card h4 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--heading-font);
     font-weight: 500;
 }
 
 .drawer-item {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--heading-font);
     font-weight: 500;
 }
 
 /* Keep body text as Roboto */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--body-font);
+    font-weight: 400;
 }
 
 /* Responsive adjustments */
@@ -869,4 +874,53 @@ body {
     height: auto;
     border-radius: 8px;  /* Optional: adds rounded corners */
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);  /* Optional: adds subtle shadow */
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.contact-info {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Update heading styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    font-weight: 600;
+}
+
+/* Update body and general text styles */
+body, 
+p, 
+.service-details li,
+.review-card p,
+.contact-info p,
+.quick-contact p {
+    font-family: var(--body-font);
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Update navigation and buttons */
+.drawer-item,
+.cta-button,
+.social-icon span {
+    font-family: var(--heading-font);
+    font-weight: 500;
+}
+
+/* Update review author names */
+.review-card h4 {
+    font-family: var(--heading-font);
+    font-weight: 500;
+}
+
+/* Update service card titles */
+.service-card h3 {
+    font-family: var(--heading-font);
+    font-weight: 600;
 } 
