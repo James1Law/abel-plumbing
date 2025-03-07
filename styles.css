@@ -254,12 +254,18 @@ section {
 
 /* Footer */
 footer {
-    background-color: #333; /* Dark background for footer */
-    color: white;
+    background-color: white;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);  /* Similar shadow as header but from bottom */
     padding: 1rem;
     text-align: center;
     width: 100%;
-    margin-top: auto; /* Pushes footer to bottom */
+    font-family: var(--body-font);
+}
+
+footer p {
+    margin: 0;
+    color: var(--secondary-color);
+    font-size: 0.9rem;  /* Reduced from default size */
 }
 
 /* Mobile Responsiveness */
