@@ -938,4 +938,47 @@ p,
         #FCAF45, #FFDC80);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.google-reviews {
+    padding: 1rem;
+    text-align: center;
+}
+
+.google-reviews h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.google-review-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.google-logo {
+    height: 20px;
+    width: auto;
+}
+
+/* Make it even smaller on very small screens */
+@media (max-width: 380px) {
+    .google-reviews h3 {
+        font-size: 1rem;
+    }
+    
+    .google-review-link {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .google-logo {
+        height: 16px;
+    }
 } 
